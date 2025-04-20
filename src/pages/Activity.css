@@ -1,0 +1,31 @@
+.activity-page {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.7;
+}
+
+.activity-page h1 {
+    font-size: 2rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
+
+.activity-page h2 {
+    margin-top: 2rem;
+    color: #444;
+}
+
+.activity-page p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+.activity-page ul, .activity-page ol {
+    padding-left: 1.2rem;
+}
+
+.activity-page li {
+    margin-bottom: 0.7rem;
+}

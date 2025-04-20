@@ -1,0 +1,22 @@
+.help-page {
+    padding: 2rem;
+    max-width: 800px;
+    margin: auto;
+    font-family: 'Segoe UI', sans-serif;
+    line-height: 1.6;
+}
+
+.help-page h1 {
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+.help-page ol {
+    list-style-position: inside;
+    padding-left: 0;
+}
+
+.help-page li {
+    margin-bottom: 1rem;
+}
