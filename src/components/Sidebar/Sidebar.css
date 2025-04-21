@@ -5,23 +5,28 @@
     justify-content: space-between;
     background-color: #f0f4f9;
     padding: 25px 15px;
-    transition: width 0.15s ease, padding 0.3s ease;
-    z-index: 999;
+    transition: width 0.15s ease, padding 0.3s ease, transform 0.3s ease;
+    z-index: 1000;
     user-select: none;
 }
 
 @media (max-width: 800px) {
     .sidebar {
         position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
     }
 }
 
 .sidebar.extended {
-    width: 250px;
+    width: 150px;
+    transform: translateX(0);
 }
 
 .sidebar.collapsed {
     width: 80px;
+    transform: translateX(-100%);
 }
 
 .sidebar img {
@@ -31,23 +36,21 @@
 .menu {
     width: 50px;
     height: 50px;
-    display: -ms-grid;
     display: grid;
     place-items: center;
     cursor: pointer;
-    border-radius: 100svh;
+    border-radius: 50%;
 }
 
 .menu:hover {
     background-color: #e8eaed;
 }
 
-.top, .bottom {
+.top,
+.bottom {
     display: grid;
     gap: 0.5rem;
-    -ms-flex-line-pack: start;
     align-content: start;
-    -ms-flex-align: center;
     align-items: center;
 }
 
@@ -81,12 +84,16 @@
 .sidebar .recent-entry {
     display: flex;
     justify-content: start;
-    align-items: start;
+    align-items: center;
     gap: 10px;
     padding: 10px;
-    border-radius: 100vh;
+    border-radius: 50px;
     color: #282828;
     cursor: pointer;
+}
+
+.history-icon {
+    width: 30px;
 }
 
 .sidebar .recent-entry:hover {
@@ -106,7 +113,6 @@
     opacity: 1;
     visibility: visible;
 }
-
 
 @keyframes fadeIn {
     from {
@@ -140,7 +146,6 @@
 }
 
 .centered {
-    display: -ms-grid;
     display: grid;
     align-items: center;
     justify-content: start;
@@ -156,3 +161,80 @@
     overflow: hidden;
 }
 
+
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1001;
+    background: #f0f4f9;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle img {
+    width: 24px;
+}
+
+.mobile-menu-toggle:hover {
+    background-color: #e8eaed;
+}
+
+
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        height: 100vh;
+        background-color: #f0f4f9;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    .sidebar.extended {
+        transform: translateX(0);
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+    }
+
+    .overlay {
+        display: block;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.3);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 03s ease;
+    }
+
+    .overlay.visible {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .overlay.hidden {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+
+@media (min-width: 769px) {
+    .overlay {
+        display: none;
+    }
+
+    .sidebar.collapsed {
+        transform: translateX(0);
+    }
+}

@@ -8,4 +8,25 @@
 #root {
   min-height: 100vh;
   display: flex;
+} 
+
+/* :root {
+  --primary-bg: #f0f4f9;
+  --text-primary: #585858;
+  --card-bg: #f0f4f9;
+  --accent-gradient: linear-gradient(16deg, #4b90ff, #ff5546);
 }
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Main Content Area */
